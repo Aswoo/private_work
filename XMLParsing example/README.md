@@ -16,39 +16,11 @@ Document document = DocumentBuilderFactory.newInstance().newDocumentBuilder().
 
 Xml.getDocumentElement().normalize();
 
-
 유니코드란
 유니코드란 전 세계적으로 사용하는 모든 문자 집합을 하나로 모은 것이다. 유니코드 1.0.0은 1991년 8월 제정되었으며, 그 후 약 5년이 지나서야 유니코드 2.0.0에 한글 11,172자가 모두 포함되었다. 현재 버전은 2010년 10월 11일 제정된 6.0이다.
 
-Java는 유니코드 정규화 기능을 지원하고 있다. 아래 코드는 그 예제이다.
-import java.text.Normalizer;
-public class NormalizerTest {  
-    private void printIt(String string) {
-        System.out.println(string);
-        for (int i = 0; i < string.length(); i++) {
-            System.out.print(String.format("U+%04X ", string.codePointAt(i)));
-        }
-        System.out.println();
-    }
-@Test
-    public void test() {
-        String han = "한";
-        printIt(han);
-String nfd = Normalizer.normalize(han, Normalizer.Form.NFD);
-        printIt(nfd);
-String nfc = Normalizer.normalize(nfd, Normalizer.Form.NFC);
-        printIt(nfc);
-    }
-}
-아래는 위의 코드를 실행한 결과이다.
-	한
-	U+D55C
-	ㅎㅏㄴ
-	U+1112 U+1161 U+11AB
-	한
-	U+D55C
-	Ref http://d2.naver.com/helloworld/76650
-	
+Java는 유니코드 정규화 기능을 지원하고 있다. 
+
 2. XPath 생성
 XPath는 XML노드들을 CSS다루듯이 쉽게 다루도록 도와주는 API입니다.
 XPath xpath = XPathFactory.newInstance().newXPath();
