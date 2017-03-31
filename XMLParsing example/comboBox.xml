@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<combolist>
+    <comboBox name="sex">
+        <option value="1">남</option>
+        <option value="2">여</option>
+    </comboBox>
+    <comboBox name="hobby">
+        <option value="1">음악감상</option>
+        <option value="2">영화보기</option>
+        <option value="3">축구</option>
+        <option value="4">야구</option>
+        <option value="5">골프</option>
+        <option value="6">기타</option>
+    </comboBox>
+</combolist>
