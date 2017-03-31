@@ -1,0 +1,108 @@
+
+XML 이란?
+
+ 트리 구조 데이터를 텍스트 형태로 단순화
+
+<?xml version="1.0"?>
+<고양이>
+<이름>나비</이름>
+<품종>샴</품종>
+<나이>6</나이>
+<중성화>예</중성화>
+<발톱 제거>아니요</발톱 제거>
+<등록 번호>Izz138bod</등록 번호>
+<소유자>이강주</소유자>
+</고양이>
+
+
+
+
+
+
+XML 파싱 방법
+ 
+ XML 파싱 방법으로는 DOM(Doucument Object Model) 방식과 SAX(Simple API for XML) 방식이 있다.
+
+ 차이점은 DOM 방식은 메모리에 모두 로드 후 파싱하고 SAX는 순차적으로 읽어가며 파싱하는 것이다. 
+경우에 따라서 적절한 방법을 쓰자.
+
+-DOM 방식
+	1. 처음 XML 문서를 메모리에 모두 로드한 후 값을 읽음.
+	2. XML 문서가 메모리에 모두 로드되어있기 때문에 노드의 검색,수정,구조 변경이 빠르고 용이하다.
+	직관적,SAX보다 파싱하기 단순
+	
+EX Source Code
+
+ File file = new File("test.xml");
+
+ DocumentBuilderFactory dbf = DocumentBuilderFact.newInsance();
+
+ DocumentBuilder db = dbf.newDocumentBuilder();
+
+ Document doc = db.parse(file);
+
+//Dom 파서 구현
+
+ String rootName = doc.getDocumentElement().getNodename(); // 루트 엘리먼트의 이름 리턴
+ NodeList nodeList = doc.getElementByTagName("region_id") //문서에서 region_id 노드를 전부 찾아 배열로 돌려줍니다.
+
+Node fstNode = nodeList.item(0); // nodeList의 첫번째 노드를 추출
+Element fstElmnt = (Element) fstNode;
+NodeList fstNmElmntLst = fstElmnt.getElementsByTagName("announce_date");
+//fstElmnt의 하위에 announce_date태그 네임을 검색하여 배열로 돌려줍니다.
+
+Element fstNmElmnt = (Element) fstNmElmntLst.item(0); //fstNmElmntList의 첫번째 노드 추출
+
+NodeList fstNm = fstNmElmnt.getChildNodes(); //fstNmElmnt의 하위 노드들 추출
+System.out.println("URL : "+ ((Node) fstNm.item(0)).getNodeValue()); //첫번째 노드의 값 출력
+위와 같이 getElementsByTagName() 과 getNodeValue()같은 함수를 사용하여 노드를 검색하고 값을 뽑아냅니다.
+
+
+-SAX 방식
+	1. XML 문서를 순차적으로 읽어들이면서 노드가 열리고 닫히는 과정에서 이벤트 발생
+	2. XML 문서를 메모리에 전부 로딩하고 파싱하는 것이 아니라서 메모리 사용량이 적고 단순히 읽기만 할때 속도가 빠름
+	3. 발생한 이벤트를 핸들링하여 변수에 저장,활용하는 것이기 때문에 복잡하고 노드수정이 어렵다.
+	4. DOM보다 어렵
+	
+
+
+*접근방법
+SAXParser parser = SAXParserFactory.newInstance().newSAXParser();
+File xmlFile = newFile(“test.xml”);
+parser.parse(xmlFile, new SAXSampleParser());
+
+*파싱방법
+클래스 선언에서 DefaultHandler를 상속받아 아래 함수들을 오버라이드 하여 사용해야 한다.
+
+  // 문서의 시작시 발생하는 이벤트 입니다.
+  public void startDocument() throws SAXException {
+    super.startDocument();
+  }
+
+  // 파서가 xml을 읽는 도중 엘리먼트 시작테그를 만날 때마다 발생하는 이벤트
+  public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
+ //qName 엘리먼트의 이름
+// 엘리먼트 속성
+    for (int i = 0; i < attributes.getLength(); i++) {
+      //System.out.println(“Attribute: ” + attributes.getQName(i) + “=” + attributes.getValue(i));
+    }
+  }
+
+  // 엘리먼트 끝
+  public void endElement(String uri, String localName, String qName) throws SAXException {
+    //System.out.println(“End Element: ” + qName);
+  }
+
+  // 엘리먼트 이벤트 중간중간 텍스트를 만났을때 발생
+  public void characters(char ch[], int start, int length) throws SAXException {
+    //System.out.println(“Character: ” + new String(ch, start, length));
+  }
+
+  // 문서의 끝
+  public void endDocument() throws SAXException {
+    super.endDocument();
+    System.out.println(“End Document”);
+  }
+위와 같이 SAX방식은 이벤트 발생시마다 호출 되는 함수에 제어할 구문을 구현하여 사용하여야 한다.
+
+출처: http://humble.tistory.com/23 [개발스토리]
