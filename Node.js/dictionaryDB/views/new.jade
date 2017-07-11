@@ -1,0 +1,117 @@
+doctype html
+html
+    title Hello word game
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='https://www.w3schools.com/w3css/4/w3.css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Oswald')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Open Sans')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+    style.
+        .wrap textarea{
+        width: 40%;
+        resize: none;
+        overflow-y: hidden; 
+        padding: 1.1em; 
+        padding-bottom: 0.2em;
+        line-height: 1.6;
+        }
+        li{ float:left}
+        h1,h2,h3,h4,h5,h6 {font-family: "Oswald"}
+        body {font-family: "Open Sans"}
+        ul {
+            list-style-type: none;
+        }
+
+        
+    body.w3-light-grey
+        // Navigation bar with social media icons
+        .w3-bar.w3-black.w3-hide-small
+            a.w3-bar-item.w3-button.w3-right(href='#')
+                i.fa.fa-search
+        //
+            w3-content defines a container for fixed size centered content,
+            and is wrapped around the whole page content, except for the footer in this example
+        .w3-content(style='max-width:1600px')
+            // Header
+            header.w3-container.w3-center.w3-padding-48.w3-white
+                h1.w3-xxxlarge
+                    b 끝말잇기
+                |     
+                h6
+                    | 재미지게 혼자 놀아봅시다
+                    span.w3-tag 슷우's Homepage
+                    .w3-container.w3-white.w3-margin.w3-padding-large
+            .w3-center
+              h3 패배를 인정하신다면
+              h5
+                | GG를 입력해주세요
+            .w3-justify
+              p
+                ul
+                  each topic in topics
+                    li
+                      a(href='/topic/'+topic)= topic 
+                      span(style="margin-right:10px;") →
+              p.w3-right
+                button.w3-button.w3-block.w3-red(type='button', onclick="showPopup()") Subscribe
+
+                //button.w3-button.w3-black(onclick="showPopup();")
+                  //b Replies  
+                  //span.w3-tag.w3-white 2
+              p.w3-clear
+              // Example of comment field
+                  
+            // Grid
+            //.w3-row.w3-padding.w3-border
+                // Blog entries
+                //.w3-col.l8.s12
+                    // END BLOG ENTRIES
+                // END About/Intro Menu
+            // END GRID
+        // END w3-content
+        
+      article
+        form(action='/topic/new' method='post')
+          p(style="text-align:center",'padding-bottom:32px')
+          div(style="width:200px; margin:0 auto; margin-bottom:300px;")
+            input.inputTypeText(type='text', name='description', value='', autofocus = '',style='width:170px;border:1px solid #7f9db9', 
+          onkeydown='javascript: if (event.keyCode == 13) {chkform();}')
+      
+      
+              
+        // Footer
+        footer.w3-container.w3-dark-grey(style='padding:16px')
+            a.w3-button.w3-black.w3-padding-large.w3-margin-bottom(href='#')
+                i.fa.fa-arrow-up.w3-margin-right
+                | To the top
+            |   
+            p
+                | Made by 승우
+        script.
+            // Toggle between hiding and showing blog replies/comments
+            document.getElementById("myBtn").click();
+            function myFunction(id) {
+            var x = document.getElementById(id);
+            if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+            } else {
+            x.className = x.className.replace(" w3-show", "");
+            }
+            }
+            function chkform()
+            {
+            var f = document.fo_search;
+            if(f.addr1.value == '')
+            {
+             alert('단어를 입력해주세요');
+             f.addr1.focus();
+             return false;
+            }else{
+             document.fo_search.submit();
+            }
+            }
+            function showPopup() {
+              console.log("popup-page");
+               window.open("popup", "a", "width=400, height=300, left=100, top=50"); 
+             }

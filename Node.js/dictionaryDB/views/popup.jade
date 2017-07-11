@@ -1,0 +1,32 @@
+doctype html 
+html
+  head
+    title Subscribe
+    meta(charset='UTF-8')
+  body.w3-light-grey
+    #subscribe.w3-modal.w3-animate-opacity
+      .w3-modal-content(style='padding:32px')
+        .w3-container.w3-white
+          i.fa.fa-remove.w3-transparent.w3-button.w3-xlarge.w3-right(onclick="document.getElementById('subscribe').style.display='none'")
+          h2.w3-wide SUBSCRIBE
+          p
+            | Join my mailing list to receive updates on the latest blog posts and other things.
+          p
+            form(action='/topic/email' method='post')
+              p
+                textarea(name = 'id' placeholder='enter id please')
+              p
+                input(type='email',name = 'email' placeholder='enter email please')
+              p
+                input(type='submit', value='Submit', style='width:75; font-family:돋움; background-color:#cccccc;border:1 solid #A0DBE4')
+              p
+                input(type="button" value="close", style = 'background-color:#cccccc;border:1 solid #A0DBE4' ,onclick="self.close();")
+        script.    
+          //
+          function moveClose() {
+          opener.location.href="email";
+          self.close();
+          }
+      
+                  
+              
