@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "763175499740",
+    "firebase_url": "https://wingex-f36f5.firebaseio.com",
+    "project_id": "wingex-f36f5",
+    "storage_bucket": "wingex-f36f5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:763175499740:android:7155139fd25dfcfb",
+        "android_client_info": {
+          "package_name": "com.example.aswoo.wingex"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "763175499740-vqdbq67u71tggninr42ji3j4dv5nkb31.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3ItUyYRWK4nrcXtRBhY7NmRXMZsnL-l8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

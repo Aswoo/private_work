@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "16474436239",
+    "firebase_url": "https://memoapp-fff6a.firebaseio.com",
+    "project_id": "memoapp-fff6a",
+    "storage_bucket": "memoapp-fff6a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:16474436239:android:f959824dc3c5e420",
+        "android_client_info": {
+          "package_name": "com.example.aswoo.memoapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "16474436239-cq6p8a8k41t5hpqr7dvpf5k9i9t7ed1e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYVr5zC9QICkpHB1wZo4kw6PwhVqENJ48"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
