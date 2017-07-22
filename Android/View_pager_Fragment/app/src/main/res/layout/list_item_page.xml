@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+
+    <RelativeLayout
+        android:layout_weight="0.1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+      >
+
+        <ImageView
+           android:layout_alignParentLeft="true"
+            android:id="@+id/page_icon"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:padding="4dp"
+            app:srcCompat="?android:attr/textSelectHandle" />
+
+        <TextView
+            android:id="@+id/page_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/page_icon"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/page_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/page_icon"
+            android:layout_below="@id/page_title"
+            android:text="TextView" />
+
+        <ImageView
+            android:id="@+id/page_good"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            />
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_weight="0.2"
+        android:id="@+id/body_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="[VideoMerge Live] Show me the money" />
+
+    <ImageView
+        android:id="@+id/body_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.7"
+        android:adjustViewBounds="true"
+        android:cropToPadding="false"
+        app:srcCompat="@android:drawable/alert_light_frame" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:gravity="bottom"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="4dp"
+                android:layout_gravity="center"
+                android:id="@+id/good_button"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/good_button"/>
+            <TextView
+                android:layout_gravity="center"
+                android:text="좋아요"
+                android:textColor="#000000"
+                android:textSize="15dp"
+                android:id="@+id/good_text"
+                android:layout_toRightOf="@id/good_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="4dp"
+                android:layout_gravity="center"
+                android:id="@+id/comment_button"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/comment_button"/>
+            <TextView
+                android:layout_gravity="center"
+                android:text="공유하기"
+                android:textColor="#000000"
+                android:textSize="15dp"
+                android:id="@+id/comment_text"
+                android:layout_toRightOf="@id/comment_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="4dp"
+                android:layout_gravity="center"
+                android:id="@+id/share_button"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:gravity="center"
+                android:src="@drawable/share_button"/>
+            <TextView
+                android:layout_gravity="center"
+                android:id="@+id/share_text"
+                android:text="공유하기"
+                android:textColor="#000000"
+                android:textSize="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
