@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.PagerAdapter;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.text.Layout;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,6 +17,7 @@ import android.view.ViewGroup;
 import android.view.ViewParent;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Collections;
 import java.util.Comparator;
@@ -31,6 +33,7 @@ public class store_fragment extends Fragment{
 
     private RecyclerView mPageRecyclerView;
     private PageAdapter mAdapter;
+    private StaggeredGridLayoutManager mStaggeredGridLayoutManager;
 
     private int id;
 
@@ -46,6 +49,7 @@ public class store_fragment extends Fragment{
     public void onAttach(Context context) {
         Log.i(TAG,"onAttach");
         super.onAttach(context);
+
     }
 
     @Override
@@ -63,14 +67,39 @@ public class store_fragment extends Fragment{
 
         View view = inflater.inflate(R.layout.fragment_photo_gallery,container,false);
         mPageRecyclerView = (RecyclerView) view.findViewById(R.id.fragment_list_rv);
+
+        //mStaggeredGridLayoutManager = new StaggeredGridLayoutManager(2,1);
+
         mPageRecyclerView
                 .setLayoutManager(new LinearLayoutManager((getActivity())));
+        //mPageRecyclerView.setLayoutManager(mStaggeredGridLayoutManager);
         mPageRecyclerView.setHasFixedSize(true);//뭔 기는ㅇ???
+
+       // setRecyclerViewLayoutManager();
 
         updateUI();
 
         return view;
     }
+
+    public void setRecyclerViewLayoutManager(int postion) {
+
+
+        switch (postion){
+            case 0:
+                mPageRecyclerView
+                        .setLayoutManager(new LinearLayoutManager((getActivity())));
+                break;
+
+            case 1:
+                mStaggeredGridLayoutManager = new StaggeredGridLayoutManager(2,1);
+                mPageRecyclerView.setLayoutManager(mStaggeredGridLayoutManager);
+                break;
+        }
+        mPageRecyclerView.setHasFixedSize(true);//뭔 기는ㅇ???
+
+}
+
 
     @Override
     public void onStart() {
@@ -158,8 +187,6 @@ public class store_fragment extends Fragment{
                     itemView.findViewById(R.id.store_image);
             mStore_detail = (TextView)
                     itemView.findViewById(R.id.store_detail);
-
-
         }
 
         public void bindStore(Store store) {
@@ -167,7 +194,6 @@ public class store_fragment extends Fragment{
             mStore_title.setText(mStore.getStore_title());
             mStore_detail.setText(mStore.getStore_detail());
             mStore_icon.setImageDrawable(mStore.getStore_image());
-
         }
     }
 
@@ -219,6 +245,5 @@ public class store_fragment extends Fragment{
             return Integer.compare(o1.getUpdate_time(),o2.getUpdate_time());
         }
     };
-
 
 }
