@@ -22,4 +22,10 @@
 
 
 
+
+
+![blue2](C:\Users\seungwoo\Documents\카카오톡 받은 파일\blue2.jpg)
+
+![blue](C:\Users\seungwoo\Documents\카카오톡 받은 파일\blue.jpg)
+
 참고 자료 : http://onycomict.com/board/bbs/board.php?bo_table=class&wr_id=144
