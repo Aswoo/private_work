@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/sellProductTradeTypeTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="36dp"
+        android:includeFontPadding="false"
+        android:text="온도 설정"
+        android:textColor="#ffffff"
+        android:textSize="12sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clickview" />
+
+    <com.github.lzyzsd.circleprogress.ArcProgress
+        android:id="@+id/settingDegree"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="44dp"
+        app:arc_bottom_text="설정온도"
+        app:arc_progress="55"
+        app:arc_text_color="#ffffff"
+        app:arc_suffix_text="℃"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/currentTemperature"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="120dp"
+        android:layout_height="4dp"
+        android:layout_marginTop="12dp"
+        android:textColor="#ffffff"
+        app:layout_constraintEnd_toEndOf="@+id/currentTemperature"
+        app:layout_constraintStart_toStartOf="@+id/currentTemperature"
+        app:layout_constraintTop_toBottomOf="@+id/currentTemperature">
+
+    </View>
+
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="120dp"
+        android:layout_height="4dp"
+        android:layout_marginTop="12dp"
+        android:textColor="#ffffff"
+        app:layout_constraintEnd_toEndOf="@+id/settingDegree"
+        app:layout_constraintStart_toStartOf="@+id/settingDegree"
+        app:layout_constraintTop_toBottomOf="@+id/settingDegree">
+    </View>
+
+
+    <View
+        android:id="@+id/weatherInfoView"
+        android:layout_width="330dp"
+        android:layout_height="120dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="176dp"
+        android:background="@drawable/bg_weaterinfoview"
+        android:textColor="#ffffff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </View>
+
+    <com.github.pwittchen.weathericonview.WeatherIconView
+        android:id="@+id/my_weather_icon"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="@+id/weatherInfoView"
+        app:layout_constraintTop_toTopOf="@+id/weatherInfoView"
+        app:weatherIconColor="#ffffff"
+        app:weatherIconResource="@string/wi_day_sunny_overcast"
+        app:weatherIconSize="50" />
+
+    <com.github.pwittchen.weathericonview.WeatherIconView
+        android:id="@+id/my_windy_icon"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginEnd="28dp"
+        app:layout_constraintBottom_toBottomOf="@+id/my_weather_icon"
+        app:layout_constraintEnd_toStartOf="@+id/my_weather_icon"
+        app:layout_constraintTop_toTopOf="@+id/my_weather_icon"
+        app:layout_constraintVertical_bias="0.0"
+        app:weatherIconColor="#ffffff"
+        app:weatherIconResource="@string/wi_day_sunny_overcast"
+        app:weatherIconSize="40" />
+
+    <View
+        android:id="@+id/clickview"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="24dp"
+        android:textColor="#ffffff"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/weatherInfoView" />
+
+    <Button
+        android:id="@+id/temperature40Btn"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/button_selector"
+        android:includeFontPadding="false"
+        android:text="40"
+        android:textColor="#1c05a4"
+        android:textSize="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sellProductTradeTypeTitle">
+
+    </Button>
+
+
+    <Button
+        android:textColor="#1c05a4"
+        android:id="@+id/temperature45Btn"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="24dp"
+        android:background="@drawable/button_selector"
+        android:includeFontPadding="false"
+        android:text="45"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/temperature40Btn"
+        app:layout_constraintStart_toEndOf="@+id/temperature40Btn"
+        app:layout_constraintTop_toTopOf="@+id/temperature40Btn" />
+
+    <Button
+        android:textColor="#1c05a4"
+        android:id="@+id/temperature50Btn"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/button_selector"
+        android:includeFontPadding="false"
+        android:text="50"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/temperature45Btn"
+        app:layout_constraintStart_toEndOf="@+id/temperature45Btn"
+        app:layout_constraintTop_toTopOf="@+id/temperature45Btn"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:textColor="#1c05a4"
+        android:id="@+id/temperature55Btn"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="24dp"
+        android:background="@drawable/button_selector"
+        android:includeFontPadding="false"
+        android:text="55"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/temperature50Btn"
+        app:layout_constraintStart_toEndOf="@+id/temperature50Btn"
+        app:layout_constraintTop_toTopOf="@+id/temperature50Btn" />
+
+    <TextView
+        android:id="@+id/currentTemperature"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="44dp"
+        android:text="TextView"
+        android:textSize="18sp"
+        android:textColor="#ffffff"
+        app:layout_constraintEnd_toStartOf="@+id/settingDegree"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/useGPSfuctionBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:background="@drawable/bg_weaterinfoview"
+        android:padding="4dp"
+        android:text="GPS기능 사용"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/useBLEfuctionBtn"
+        app:layout_constraintStart_toEndOf="@+id/useBLEfuctionBtn"
+        app:layout_constraintTop_toTopOf="@+id/useBLEfuctionBtn"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/useBLEfuctionBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_weaterinfoview"
+        android:padding="4dp"
+        android:text="블루투스 탐색"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/temperature45Btn"
+        app:layout_constraintVertical_bias="0.47" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="#ffffff"
+        android:text="현재 기온"
+        app:layout_constraintEnd_toEndOf="@+id/currentWeatherTemp"
+        app:layout_constraintStart_toStartOf="@+id/currentWeatherTemp"
+        app:layout_constraintTop_toBottomOf="@+id/currentWeatherTemp" />
+
+    <TextView
+        android:id="@+id/currentWeatherTemp"
+        android:layout_width="50dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:text="20C"
+        app:layout_constraintStart_toStartOf="@+id/weatherInfoView"
+        app:layout_constraintTop_toTopOf="@+id/weatherInfoView" />
+
+    <TextView
+        android:id="@+id/myGPSPosition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="-"
+        android:padding="4dp"
+        android:textColor="#ffffff"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="@+id/weatherInfoView"
+        app:layout_constraintStart_toStartOf="@+id/weatherInfoView"
+        app:layout_constraintTop_toTopOf="@+id/weatherInfoView" />
+
+</android.support.constraint.ConstraintLayout>

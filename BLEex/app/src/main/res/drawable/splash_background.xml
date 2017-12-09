@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@color/splash" />
+
+    <item
+        android:top="164dp"
+        android:bottom="309dp">
+        <bitmap android:src="@drawable/ic_reloj_max"
+            android:gravity="center_horizontal"
+            />
+    </item>
+
+</layer-list>
